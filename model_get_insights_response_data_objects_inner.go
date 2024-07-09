@@ -45,7 +45,7 @@ type GetInsightsResponseDataObjectsInner struct {
 	SubResolution *string `json:"subResolution,omitempty"`
 	Entity *GetInsightsResponseDataObjectsInnerEntity `json:"entity,omitempty"`
 	Signals []GetInsightsResponseDataObjectsInnerSignalsInner `json:"signals"`
-	InvolvedEntities []GetInsightsResponseDataObjectsInnerSignalsInnerEntity `json:"involvedEntities"`
+	InvolvedEntities []GetInsightsResponseDataObjectsInnerSignalsInnerEntity `json:"involvedEntities,omitempty"`
 	Artifacts []GetInsightsResponseDataObjectsInnerArtifactsInner `json:"artifacts"`
 	// The aggregated fields and values from the records of the Insight based on the recordSummaryFields query parameter
 	RecordSummaryFields []GetInsightsResponseDataObjectsInnerRecordSummaryFieldsInner `json:"recordSummaryFields"`
