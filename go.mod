@@ -1,4 +1,4 @@
-module github.com/misradi/csiemSDK
+module github.com/misradi/sumologiccsiem
 
 go 1.18
 
