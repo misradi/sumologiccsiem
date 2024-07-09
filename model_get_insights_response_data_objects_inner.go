@@ -43,7 +43,7 @@ type GetInsightsResponseDataObjectsInner struct {
 	Status GetInsightsResponseDataObjectsInnerStatus `json:"status"`
 	Resolution *string `json:"resolution,omitempty"`
 	SubResolution *string `json:"subResolution,omitempty"`
-	Entity GetInsightsResponseDataObjectsInnerEntity `json:"entity,omitempty"`
+	Entity *GetInsightsResponseDataObjectsInnerEntity `json:"entity,omitempty"`
 	Signals []GetInsightsResponseDataObjectsInnerSignalsInner `json:"signals"`
 	InvolvedEntities []GetInsightsResponseDataObjectsInnerSignalsInnerEntity `json:"involvedEntities"`
 	Artifacts []GetInsightsResponseDataObjectsInnerArtifactsInner `json:"artifacts"`
@@ -75,7 +75,7 @@ func NewGetInsightsResponseDataObjectsInner(id string, readableId string, name s
 	this.Created = created
 	this.Severity = severity
 	this.Status = status
-	this.Entity = entity
+	this.Entity = &entity
 	this.Signals = signals
 	this.InvolvedEntities = involvedEntities
 	this.Artifacts = artifacts
@@ -572,7 +572,7 @@ func (o *GetInsightsResponseDataObjectsInner) GetEntity() GetInsightsResponseDat
 		return ret
 	}
 
-	return o.Entity
+	return *o.Entity
 }
 
 // GetEntityOk returns a tuple with the Entity field value
@@ -581,12 +581,12 @@ func (o *GetInsightsResponseDataObjectsInner) GetEntityOk() (*GetInsightsRespons
 	if o == nil {
 		return nil, false
 	}
-	return &o.Entity, true
+	return o.Entity, true
 }
 
 // SetEntity sets field value
 func (o *GetInsightsResponseDataObjectsInner) SetEntity(v GetInsightsResponseDataObjectsInnerEntity) {
-	o.Entity = v
+	o.Entity = &v
 }
 
 // GetSignals returns the Signals field value
